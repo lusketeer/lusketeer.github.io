@@ -5,3 +5,12 @@ body {
 #header {
 	margin-top: -75px;
 }
+
+.jumbotron {
+	background-image: url(https://gadgetsdeal.in/wp-content/uploads/2013/08/FreeGreatPicture.com-8299-background-color.jpg);
+	color: #eee;
+}
+
+#content {
+	text-align: center;
+}
