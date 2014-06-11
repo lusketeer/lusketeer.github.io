@@ -1,10 +1,27 @@
 body {
-	padding-top: 70px;
+	padding-top: 51px;
 }
 
-#header {
-	margin-top: -75px;
+/*Center Search Bar and Make it longer*/
+/*
+nav form.navbar-form {
+	width: 100%;
 }
+
+nav form .form-group {
+	width: 100%;
+	text-align: center;
+}
+
+.navbar-form .form-control {
+	width: 70%;
+}
+
+#search {
+	text-align: center;
+}*/
+
+/*End of Centering Search Bar*/
 
 .jumbotron {
 	background-image: url(https://gadgetsdeal.in/wp-content/uploads/2013/08/FreeGreatPicture.com-8299-background-color.jpg);
