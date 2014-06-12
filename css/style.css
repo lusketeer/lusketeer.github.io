@@ -24,8 +24,19 @@ nav form .form-group {
 /*End of Centering Search Bar*/
 
 .jumbotron {
-	background-image: url(https://gadgetsdeal.in/wp-content/uploads/2013/08/FreeGreatPicture.com-8299-background-color.jpg);
-	color: #eee;
+	background-image: url(http://i2.minus.com/iHZLzJmbsO6rh.jpg);
+	background-position: center;
+	color: #000;
+}
+
+.jumbotron .container {
+	background-color: #eee;
+	opacity: 0.7;
+	border-radius: 10px;
+}
+
+.jumbotron .container p {
+	padding-bottom: 10px;
 }
 
 #content {
