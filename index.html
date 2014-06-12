@@ -15,7 +15,7 @@
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		  <div class="container">
 		  	<a id="home" class="navbar-brand" href="#" data-toggle="tooltip" data-placement="bottom" title="Home"><span class="glyphicon glyphicon-home"></span></a>
-		    <form class="navbar-form navbar-right" role="search">
+		    <form class="navbar-form navbar-right col-sm-4" role="search">
 		        <div class="form-group">
 			        <input id="search" type="text" class="form-control" placeholder="Search Projects" ng-model="q">
 		        </div>
@@ -29,13 +29,8 @@
 			</div>
 		</div>
 		<div class="container">
-			<div id="content">
-				<div class="row" id="project-list" ng-controller="ProjectController as PC">
-					<div class="col-lg-4 animate" ng-repeat="project in PC.projects | filter:q">
-						<h2>{{ project.heading }}</h2>
-						<p>{{ project.summary }}</p>
-					</div>
-				</div>
+			<div id="content" ng-controller="ProjectController as PC">
+				<project-list></project-list>
 			</div>
 		</div>
 
@@ -46,6 +41,15 @@
 		<script src="js/projects.js"></script>
 		<script type="text/javascript">
 			$('#home').tooltip('hide');
+			$("a#home").click(function() {
+			  $("html, body").animate({ scrollTop: 0 }, "slow");
+			  return false;
+			});
+			$("#search").focus(function() {
+			    $('html, body').animate({
+			        scrollTop: $("#content").offset().top
+			    }, 2000);
+			});
 		</script>
 	</body>
 </html>

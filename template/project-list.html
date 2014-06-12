@@ -1,2 +1,6 @@
-<h2>{{ project.heading }}</h2>
-<p>{{ project.summary }}</p>
+<div class="row" id="project-list" ng-repeat="project in PC.projects | filter:q">
+	<div>
+		<h2><a href="{{ project.url }}">{{ project.heading }}</a></h2>
+		<p>{{ project.summary }}</p>
+	</div>
+</div>

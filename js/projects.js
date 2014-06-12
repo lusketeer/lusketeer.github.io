@@ -1,20 +1,22 @@
 (function() {
 	var app = angular.module('my-app-projects', []);
 
-	app.controller('ProjectController', function() {
-		this.projects = projects;
-	});
+	app.controller('ProjectController', ["$http", function($http) {
+		var PC = this;
+		PC.projects = [];
+		$http.get("data/project-list.json").success(function(data){
+			PC.projects = data;
+		}).error(function() {
+			console.log("Data fail to load");
+			}		
+		);
+		// this.projects = projects;
+	}]);
 
 	app.directive("projectList", function(){
 		return {
 			restrict: "E",
-			templateUrl: "../template/project-list.html"
+			templateUrl: "template/project-list.html"
 		};
 	});
-
-	var projects = [
-	    { heading: 'Azurite', summary: "Integer nec metus vitae nunc volutpat molestie nec vel odio. Cras venenatis tortor sed justo interdum venenatis. Integer nec metus vitae nunc volutpat molestie nec vel odio. Cras venenatis tortor sed justo interdum venenatis." },
-	    { heading: 'Bloodstone', summary: "Integer nec metus vitae nunc volutpat molestie nec vel odio. Cras venenatis tortor sed justo interdum venenatis. Integer nec metus vitae nunc volutpat molestie nec vel odio. Cras venenatis tortor sed justo interdum venenatis." },
-	    { heading: 'Zircon', summary: "Integer nec metus vitae nunc volutpat molestie nec vel odio. Cras venenatis tortor sed justo interdum venenatis. Integer nec metus vitae nunc volutpat molestie nec vel odio. Cras venenatis tortor sed justo interdum venenatis." },
-	  ];
 })();

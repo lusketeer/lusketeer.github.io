@@ -40,5 +40,8 @@ nav form .form-group {
 }
 
 #content {
-	text-align: center;
+}
+
+#content a {
+	text-decoration: none;
 }
