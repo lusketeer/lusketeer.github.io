@@ -25,7 +25,7 @@ nav form .form-group {
 
 .jumbotron {
 	background-image: url(http://i2.minus.com/iHZLzJmbsO6rh.jpg);
-	background-position: center;
+	background-position: no-repeat center center fixed;
 	color: #000;
 }
 

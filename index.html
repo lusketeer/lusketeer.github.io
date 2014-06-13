@@ -31,6 +31,12 @@
 		<div class="container">
 			<div id="content" ng-controller="ProjectController as PC">
 				<project-list></project-list>
+				<!-- <div class="row" id="project-list" ng-repeat="project in PC.projects | filter:q">
+					<div>
+						<h2><a href="{{ project.url }}">{{ project.heading }}</a></h2>
+						<p>{{ project.summary }}</p>
+					</div>
+				</div> -->
 			</div>
 		</div>
 
@@ -42,13 +48,16 @@
 		<script type="text/javascript">
 			$('#home').tooltip('hide');
 			$("a#home").click(function() {
-			  $("html, body").animate({ scrollTop: 0 }, "slow");
-			  return false;
+				$("html, body").animate({ 
+					scrollTop: 0 
+				}, "slow");
+				return false;
 			});
 			$("#search").focus(function() {
 			    $('html, body').animate({
 			        scrollTop: $("#content").offset().top
 			    }, 2000);
+			    return false;
 			});
 		</script>
 	</body>
