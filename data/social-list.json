@@ -1,0 +1,17 @@
+[
+	{	
+		"name": "Github", 
+		"css_class": "fa-github",
+		"url": "https://github.com/lusketeer" 
+	},
+	{	
+		"name": "Twitter", 
+		"css_class": "fa-twitter",
+		"url": "https://twitter.com/LukeLuSYS"
+	},
+	{	
+		"name": "Linkedin", 
+		"css_class": "fa-linkedin", 
+		"url": "https://www.linkedin.com/in/lukeqlu"  
+	}
+]

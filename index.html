@@ -1,64 +1,197 @@
-<!DOCTYPE HTML>
-<html lang="en" ng-app="my-app">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> -->
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<title>Lusketeer's Github Page</title>
-	</head>
-	<body>
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		  <div class="container">
-		  	<a id="home" class="navbar-brand" href="#" data-toggle="tooltip" data-placement="bottom" title="Home"><span class="glyphicon glyphicon-home"></span></a>
-		    <form class="navbar-form navbar-right col-sm-4" role="search">
-		        <div class="form-group">
-			        <input id="search" type="text" class="form-control" placeholder="Search Projects" ng-model="q">
-		        </div>
-		    </form>
-		  </div>
-		</nav>
-		<div class="jumbotron">
-			<div class="container">
-			  <h1>Lusketeer</h1>
-			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat diam nibh, a mollis ligula ultricies ut. Pellentesque vel ipsum hendrerit, cursus purus in, pellentesque neque. Donec interdum volutpat orci et venenatis. Sed lectus sapien, commodo sit amet accumsan a, fringilla a neque. Morbi interdum quis ipsum sed rutrum. Nullam rhoncus at lacus quis lacinia. Integer nec metus vitae nunc volutpat molestie nec vel odio. Cras venenatis tortor sed justo interdum venenatis.</p>
-			</div>
-		</div>
-		<div class="container">
-			<div id="content" ng-controller="ProjectController as PC">
-				<project-list></project-list>
-				<!-- <div class="row" id="project-list" ng-repeat="project in PC.projects | filter:q">
-					<div>
-						<h2><a href="{{ project.url }}">{{ project.heading }}</a></h2>
-						<p>{{ project.summary }}</p>
-					</div>
-				</div> -->
-			</div>
-		</div>
+<!DOCTYPE html>
+<html lang="en" ng-app="my-app" 
+    ng-init="
+    admin='Lusketeer';
+    root='http://lusketeer.github.io'
+    ">
 
-		<!-- Angular JS  -->
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-		<!-- // <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-animate.min.js"></script> -->
-		<script src="js/app.js"></script>
-		<script src="js/projects.js"></script>
-		<script type="text/javascript">
-			$('#home').tooltip('hide');
-			$("a#home").click(function() {
-				$("html, body").animate({ 
-					scrollTop: 0 
-				}, "slow");
-				return false;
-			});
-			$("#search").focus(function() {
-			    $('html, body').animate({
-			        scrollTop: $("#content").offset().top
-			    }, 2000);
-			    return false;
-			});
-		</script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ admin }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Add custom CSS here -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" id="home" data-toggle="tooltip" data-placement="bottom" title="Home"><span class="glyphicon glyphicon-home"></span></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                <ul id="nav_list" class="nav navbar-nav">
+                    <li><a href="#about">About</a>
+                    </li>
+                    <li><a href="#services">Services</a>
+                    </li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <div class="intro-header" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>{{ admin }}'s Github Page</h1>
+                        <hr class="intro-divider">
+                        <social-list class="intro-social-buttons"></social-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.intro-header -->
+
+    <div class="content-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">About</h2>
+                    <p class="lead">A special thanks to Death to the Stock Photo for providing the photographs that you see in this template. <a target="_blank" href="http://join.deathtothestockphoto.com/">Visit their website</a> to become a member.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/ipad.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Services</h2>
+                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by PSDCovers! <a target="_blank" href="http://www.psdcovers.com/">Visit their website</a> to download some of their awesome, free photoshop actions!</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/doge.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Contact</h2>
+                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/phones.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Connect with Luke</h2>
+                </div>
+                <div class="col-lg-6">
+                    <social-list class="banner-social-buttons"></social-list>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.banner -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <ul class="list-inline">
+                        <li><a href="#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#contact">Contact</a>
+                        </li>
+                    </ul> -->
+                    <p class="copyright text-muted small">Copyright &copy; {{ admin }} 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>   
+
+    <!-- Angular JS  -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <!-- // <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-animate.min.js"></script> -->
+    <script src="js/app.js"></script>
+    <script src="js/socials.js"></script>
+    <!-- // <script type="text/javascript" src="js/script.js"></script> -->
+
+    <script type="text/javascript">
+        $('#home').tooltip('hide');
+        $("a#home").click(function() {
+            $("html, body").animate({ 
+                scrollTop: 0 
+            }, "slow");
+            return false;
+        });
+        $("#nav_list a").click(function() {
+            var target = $(this).attr("href");
+            $('html, body').animate({
+                scrollTop: $(target).offset().top
+            }, "slow");
+            return false;
+        });
+    </script>
+
+</body>
+
 </html>
