@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="my-app" 
-    ng-init="
-    admin='Lusketeer';
-    root='http://lusketeer.github.io'
-    ">
+<html lang="en" ng-app="my-app" ng-controller="myCtrl">
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{ admin }}</title>
+    <title>{{ info.admin.name.first }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -22,10 +18,8 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 
     <!-- Add custom CSS here -->
-    <link href="css/landing-page.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <link href="css/style.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> -->
-
 </head>
 
 <body>
@@ -47,7 +41,7 @@
                     </li>
                     <li><a href="#projects">Projects</a>
                     </li>
-                    <li><a href="#contact">Contact</a>
+                    <li><a href="#causes">Causes</a>
                     </li>
                 </ul>
             </div>
@@ -60,7 +54,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>{{ admin }}'s Github Page</h1>
+                        <h1>{{ info.admin.name.first }}'s Github Page</h1>
                         <hr class="intro-divider">
                         <social-list class="intro-social-buttons"></social-list>
                     </div>
@@ -81,7 +75,7 @@
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus orci, tempor in tellus vitae, hendrerit vestibulum nulla. Maecenas quis augue enim. Cras porttitor libero ut massa gravida scelerisque. Aliquam id feugiat mi. Praesent et justo ac lacus malesuada dapibus eget vitae felis.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/ipad.png" alt="">
+                    <!-- <img class="img-responsive" src="img/ipad.png" alt=""> -->
                 </div>
             </div>
 
@@ -94,13 +88,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
+                    <hr class="section-heading-spacer pull-right">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Projects</h2>
                     <p class="lead">Aliquam erat volutpat. Suspendisse ac posuere odio, a vulputate elit. Morbi ipsum orci, pretium eget augue sit amet, elementum pretium magna. Vestibulum porta, enim at pretium viverra, dolor enim eleifend nisl, eget tristique tellus tellus nec lorem. Quisque at placerat sem. </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/doge.png" alt="">
+                    <!-- <img class="img-responsive" src="img/doge.png" alt=""> -->
                 </div>
             </div>
         </div>
@@ -108,17 +102,23 @@
     </div>
     <!-- /.content-section-b -->
 
-    <div class="content-section" id="contact">
+    <div class="content-section" id="causes">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Contact</h2>
+                    <h2 class="section-heading">Causes</h2>
                     <p class="lead">Morbi id rhoncus nisl, et suscipit sem. Donec commodo bibendum risus, ac ultrices turpis interdum vel. Curabitur ultricies erat purus, blandit auctor nibh vehicula et. Aenean fringilla dui adipiscing volutpat elementum. Etiam quis gravida nulla, a rutrum ipsum. Mauris eu nibh nec neque imperdiet gravida.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
+                    <hr class="section-heading-spacer pull-right">
+                    <div class="clearfix"></div>
+                    <div class="list-group" id="causes_list">
+                        <a href="https://pencilsofpromise.org/" target="new" class="list-group-item">Pencils of Promise</a>
+                        <a href="http://www.charitywater.org/" target="new" class="list-group-item">charity: water</a>
+                    </div>
+                    <!-- <img class="img-responsive" src="img/phones.png" alt=""> -->
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Connect with Luke</h2>
+                    <h2>Connect with {{ info.admin.name.first }}</h2>
                 </div>
                 <div class="col-lg-6">
                     <social-list class="banner-social-buttons"></social-list>
@@ -155,10 +155,10 @@
                         <li><a href="#projects">Projects</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
-                        <li><a href="#contact">Contact</a>
+                        <li><a href="#causes">Causes</a>
                         </li>
                     </ul> -->
-                    <p class="copyright text-muted small">Copyright &copy; {{ admin }} 2014. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; {{ info.admin.name.first }} 2014. All Rights Reserved</p>
                 </div>
             </div>
         </div>
@@ -174,7 +174,6 @@
     <script src="js/app.js"></script>
     <script src="js/socials.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-
 
 </body>
 
