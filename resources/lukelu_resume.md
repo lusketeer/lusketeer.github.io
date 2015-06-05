@@ -64,11 +64,11 @@ B.S. Systems and Information Engineering, _Business Minor_
 | Analytical Softwares  | `@Risk, MiniTab, R`          |
 
 ### References
-** Alex Polchert **
+**Alex Polchert**
 _Owner, Imajine.us_
 
-** Paul Orange **
+**Paul Orange**
 _COO, Cardiovascular Research Center_
 
-** Robert Bremer **
+**Robert Bremer**
 _Associate Dean for Management and Finance, University of Virigina_
