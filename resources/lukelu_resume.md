@@ -5,8 +5,8 @@
 Engineer by Nature, Entrepreneur by Heart
 <img style="float: right" width="100px;" src="http://www.lusketeer.com/img/linkedin.png">
 
-**Email:** _luke.lu7@gmail.com_
-**Phone:** _+1 (703) 310 - 8886_
+**Email:** _(Upon Request)_
+**Phone:** _(Upon Request)_
 **[LinkedIn][linkedin]**
 **[Github][github]**
 
