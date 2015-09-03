@@ -9,7 +9,8 @@
 					last: "Lu",
 					nick: "Lusketeer"
 				}
-			}
+			},
+			today: new Date()
 		}
 	});
 })();
